@@ -40,7 +40,7 @@ Get-FileHash .\Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe -Algorithm SHA256
 
 Installer SHA-256:
 
-`a890efed55925e0f394366a79728092091072ba150a9634106a3a84c1a9e6374`
+`b39a121aea09c12013159e6188a09dff73a642fcaef5fcd87ad9b76601a5900d`
 
 Original Mac installer SHA-256:
 
