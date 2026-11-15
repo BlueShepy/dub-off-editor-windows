@@ -4,7 +4,7 @@ Unofficial Windows x64 packaging of [Dub-Off Editor](https://dub-off.com/editor)
 
 ## Download
 
-[Download the Windows installer](https://github.com/BlueShepy/dub-off-editor-windows/releases/download/v0.1.0-windows.1/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe) (approximately 917 MB).
+[Download the Windows installer](https://github.com/BlueShepy/dub-off-editor-windows/releases/download/v0.1.0-windows.1/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe) (approximately 959 MB).
 
 Requires 64-bit Windows 10 or 11. Run the installer; it installs for your Windows user and adds Dub-Off Editor to the Start menu. The installer is unsigned.
 
