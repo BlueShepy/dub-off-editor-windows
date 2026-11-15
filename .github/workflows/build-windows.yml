@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      DUB_PORT_WORK_ROOT: ${{ runner.temp }}/dub-port
-      ELECTRON_BUILDER_CACHE: ${{ runner.temp }}/electron-builder-cache
+      DUB_PORT_WORK_ROOT: ${{ github.workspace }}/work
+      ELECTRON_BUILDER_CACHE: ${{ github.workspace }}/builder-cache
       ELECTRON_BUILDER_COMPRESSION_LEVEL: '1'
       GH_TOKEN: ${{ github.token }}
     steps:
