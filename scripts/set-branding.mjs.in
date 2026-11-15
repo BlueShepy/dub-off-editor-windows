@@ -1,0 +1,23 @@
+import fs from 'node:fs';
+import * as PE from 'pe-library';
+import * as ResEdit from 'resedit';
+const filename = '/workspace/work/windows/Dub-Off Editor/Dub-Off Editor.exe';
+const exe = PE.NtExecutable.from(fs.readFileSync(filename), { ignoreCert: true });
+const res = PE.NtExecutableResource.from(exe);
+const icon = ResEdit.Data.IconFile.from(fs.readFileSync('/workspace/work/icon.ico'));
+for (const group of ResEdit.Resource.IconGroupEntry.fromEntries(res.entries)) {
+  ResEdit.Resource.IconGroupEntry.replaceIconsForResource(res.entries, group.id, group.lang, icon.icons.map(x=>x.data));
+}
+for (const vi of ResEdit.Resource.VersionInfo.fromEntries(res.entries)) {
+  vi.setFileVersion(0, 1, 0, 0, 1033);
+  vi.setProductVersion(0, 1, 0, 0, 1033);
+  vi.setStringValues({lang:1033,codepage:1200}, {
+    FileDescription: 'Dub-Off Editor', ProductName: 'Dub-Off Editor',
+    OriginalFilename:'Dub-Off Editor.exe', InternalName:'dub-off-editor',
+    CompanyName:'Dub-Off', LegalCopyright:'Dub-Off'
+  });
+  vi.outputToResourceEntries(res.entries);
+}
+res.outputResource(exe);
+fs.writeFileSync(filename, Buffer.from(exe.generate()));
+console.log('Preserved the original app icon and product name in the Windows executable.');
