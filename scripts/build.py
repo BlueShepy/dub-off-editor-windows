@@ -2,11 +2,13 @@
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import struct
 import subprocess
 import tarfile
+import zipfile
 from PIL import Image
 import assemble_windows as a
 
@@ -82,8 +84,17 @@ run('node',here/'package.cjs')
 installer=root/'release/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe'
 run(root/'7zip/7zz','t',installer)
 digest=hashlib.file_digest(installer.open('rb'),'sha256').hexdigest()
-(root/'release/SHA256SUMS.txt').write_text(digest+'  '+installer.name+'\n')
-old='ef1c359b7dd5ca3eaccc7b23c8453c4ad5dcb9b39a3a62bcf8a3e81f91fa39a9'
+portable=root/'release/Dub-Off-Editor-0.1.0-Windows-x64-Portable.zip'
+with zipfile.ZipFile(portable,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=1) as z:
+    for p in sorted(a.APP.rglob('*')):
+        if p.is_file():z.write(p,Path('Dub-Off Editor')/p.relative_to(a.APP))
+run(root/'7zip/7zz','t',portable)
+portable_digest=hashlib.file_digest(portable.open('rb'),'sha256').hexdigest()
+(root/'release/SHA256SUMS.txt').write_text(digest+'  '+installer.name+'\n'+portable_digest+'  '+portable.name+'\n')
 readme=here.parent/'README.md'
-readme.write_text(readme.read_text().replace(old,digest))
+readme_text=re.sub(r'(Installer SHA-256:\n\n`)[0-9a-f]{64}(`)',lambda m:m.group(1)+digest+m.group(2),readme.read_text())
+readme_text=re.sub(r'\(approximately [\d,]+ MB\)',f'(approximately {installer.stat().st_size/1e6:.0f} MB)',readme_text,count=1)
+readme.write_text(readme_text)
 (root/'release/notes.md').write_text('Unofficial Windows x64 packaging of Dub-Off Editor 0.1.0. Original application code and interface are unchanged; Windows runtimes and offline speech models are included.\n\nDownload the setup EXE under Assets. Requires 64-bit Windows 10 or 11. The installer is unsigned.\n\n**Experimental:** the original local build passed an offline speech smoke test under Wine. Full installation, graphical editing, and export on a real Windows PC remain untested. This is not an official Dub-Off release. See README for verification and update limitations.\n\nThis release was rebuilt on GitHub Actions from the same verified inputs because the connected cloud session could not authenticate to GitHub\'s asset-upload host. Installer packaging bytes and its checksum therefore differ from the earlier local build.\n\nSHA-256: `'+digest+'`\n')
+with (root/'release/notes.md').open('a') as f:
+    f.write('\nThe Portable ZIP contains the complete unpacked Windows application, including its runtime libraries, Python packages, and offline models. Extract it and open `Dub-Off Editor.exe`. Recovered application code, assets, build scripts, and verification records are also public in the repository.\n')

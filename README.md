@@ -10,6 +10,16 @@ Requires 64-bit Windows 10 or 11. Run the installer; it installs for your Window
 
 The editor application archive, interface, Python voice script, dependency lock, and model data are unchanged from the original Mac release. Windows versions of Electron, Python, FFmpeg, yt-dlp, and the speech dependencies replace the Mac runtimes. The original icon is preserved. Speech tools and models are bundled for offline processing.
 
+## Files and portable package
+
+The recovered application code, renderer assets, Python project, build scripts,
+dependency locks, and verification records are public in this repository.
+See [FILES.md](FILES.md) for the directory map and rebuild instructions.
+
+[Download the complete portable Windows package](https://github.com/BlueShepy/dub-off-editor-windows/releases/download/v0.1.0-windows.1/Dub-Off-Editor-0.1.0-Windows-x64-Portable.zip).
+The ZIP includes every unpacked application file, runtime library, and offline
+speech model. Extract it and open `Dub-Off Editor.exe`.
+
 ## Verification and limits
 
 The source DMG matched the publisher's SHA-256. Platform dependencies matched their published checksums or the original dependency lock. The Windows application's archive is byte-for-byte identical to the original archive. Both the complete payload and the NSIS installer passed integrity checks.

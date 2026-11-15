@@ -1,0 +1,32 @@
+
+7-Zip (z) 26.06 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-11-06
+ 64-bit locale=C.UTF-8 Threads:3 OPEN_MAX:16384, ASM
+
+Scanning the drive for archives:
+1 file, 917075698 bytes (875 MiB)
+
+Listing archive: /workspace/work/release/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe
+
+--
+Path = /workspace/work/release/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe
+Type = Nsis
+Physical Size = 917075698
+Method = Deflate
+Solid = -
+Headers Size = 122286
+Embedded Stub Size = 89600
+SubType = NSIS-3 Unicode
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+                    .....                      6931  $PLUGINSDIR/System.dll
+                    .....                     45608  $PLUGINSDIR/StdUtils.dll
+                    .....                      4615  $PLUGINSDIR/SpiderBanner.dll
+                    .....                      3299  $PLUGINSDIR/nsExec.dll
+2026-11-15 19:55:00 .....                     44629  uninstallerIcon.ico
+2026-11-15 20:08:08 .....    916458045    916458045  $PLUGINSDIR/app-64.7z
+                    .....                    242382  $PLUGINSDIR/nsis7z.dll
+2026-11-15 20:09:00 .....                    150962  $R0/Uninstall Dub-Off Editor.exe
+                    .....                      1080  $PLUGINSDIR/WinShell.dll
+------------------- ----- ------------ ------------  ------------------------
+2026-11-15 20:09:00          916458045    916957551  9 files

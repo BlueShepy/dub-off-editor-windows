@@ -1,0 +1,30 @@
+{
+  "appId": "com.dub-off.editor",
+  "productName": "Dub-Off Editor",
+  "artifactName": "Dub-Off-Editor-0.1.0-Windows-x64-Setup.${ext}",
+  "electronVersion": "45.0.0",
+  "directories": {
+    "output": "/workspace/work/release",
+    "buildResources": "/workspace/work"
+  },
+  "win": {
+    "target": [{"target":"nsis","arch":["x64"]}],
+    "icon": "/workspace/work/icon.ico",
+    "signAndEditExecutable": false
+  },
+  "nsis": {
+    "oneClick": true,
+    "perMachine": false,
+    "allowElevation": false,
+    "createDesktopShortcut": false,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Dub-Off Editor",
+    "installerIcon": "/workspace/work/icon.ico",
+    "uninstallerIcon": "/workspace/work/icon.ico",
+    "packElevateHelper": false,
+    "runAfterFinish": true,
+    "deleteAppDataOnUninstall": false
+  },
+  "fileAssociations": [{"ext":"dub","name":"Dub-Off Scene","role":"Editor"}],
+  "publish": null
+}

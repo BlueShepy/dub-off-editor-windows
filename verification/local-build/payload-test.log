@@ -1,0 +1,23 @@
+
+7-Zip (z) 26.06 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-11-06
+ 64-bit locale=C.UTF-8 Threads:3 OPEN_MAX:16384, ASM
+
+Scanning the drive for archives:
+1 file, 916458045 bytes (875 MiB)
+
+Testing archive: /workspace/work/release/dub-off-editor-0.1.0-x64.nsis.7z
+--
+Path = /workspace/work/release/dub-off-editor-0.1.0-x64.nsis.7z
+Type = 7z
+Physical Size = 916458045
+Headers Size = 259159
+Method = LZMA2:20 BCJ
+Solid = -
+Blocks = 20402
+
+Everything is Ok
+
+Folders: 1633
+Files: 20715
+Size:       2126889838
+Compressed: 916458045

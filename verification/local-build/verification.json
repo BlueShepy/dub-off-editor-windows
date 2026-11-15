@@ -1,0 +1,90 @@
+{
+  "source": "https://download.dub-off.com/editor/beta/dub-off-editor-0.1.0-mac-arm64.dmg",
+  "sourceSHA256": "98f997a7a19332062e78eee8e07d00fa7a0aedda3ded94e9ac42d59692b7825f",
+  "appArchiveSHA256": "102459ea85a6fd996a09c2081faed7fe70c560a9b9d308c2da00acbcb803d6b6",
+  "applicationCodeUnchanged": true,
+  "voiceScriptUnchanged": true,
+  "dependencyLockUnchanged": true,
+  "modelFiles": [
+    {
+      "path": "vendor/voice/models/huggingface/hub/CACHEDIR.TAG",
+      "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--Systran--faster-whisper-small/refs/main",
+      "sha256": "8d5d066ac370fbf2b2921929949086f12e8466dacb5269c2d4bef92de48844c9"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--Systran--faster-whisper-small/trees/536b0662742c02347bc0e980a01041f333bce120.json",
+      "sha256": "052b45b956271e936827846b5c6b68a80d3c0bd5a445afef3ef9e67061587839"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--Systran--faster-whisper-small/snapshots/536b0662742c02347bc0e980a01041f333bce120/vocabulary.txt",
+      "sha256": "34ce3fe1c5041027b3f8d42912270993f986dbc4bb34cf27f951e34a1e453913"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--Systran--faster-whisper-small/snapshots/536b0662742c02347bc0e980a01041f333bce120/model.bin",
+      "sha256": "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--Systran--faster-whisper-small/snapshots/536b0662742c02347bc0e980a01041f333bce120/config.json",
+      "sha256": "b55496ac7940a7ae47d2c01eab40edfd8701feec1229d9cce3b40014383fb828"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--Systran--faster-whisper-small/snapshots/536b0662742c02347bc0e980a01041f333bce120/tokenizer.json",
+      "sha256": "fb7b63191e9bb045082c79fd742a3106a12c99513ab30df4a0d47fa6cb6fd0ab"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--adefossez--HTDemucs/refs/main",
+      "sha256": "84c9cdd9fc6d83ddbfead235f2198210b8e8a972dfa916bf939bac77e0750004"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--adefossez--HTDemucs/snapshots/cbc8a9b1a87023b7fd74e7b3412e6321c0eab003/htdemucs.yaml",
+      "sha256": "239c445d0b14454d541ad8bd9bb271c9e536d267e8a4625208744cbb2e7bb66c"
+    },
+    {
+      "path": "vendor/voice/models/huggingface/hub/models--adefossez--HTDemucs/snapshots/cbc8a9b1a87023b7fd74e7b3412e6321c0eab003/955717e8.safetensors",
+      "sha256": "d9fa14133cfcc034a6758923bb3a8ca9f8dfd0b582134643bbf83f72c17576dd"
+    }
+  ],
+  "speechRuntimeInfo": {
+    "event": "result",
+    "python": "3.12.15",
+    "executable": "Z:\\workspace\\work\\windows\\Dub-Off Editor\\resources\\vendor\\voice\\python\\python.exe",
+    "platform": "Windows-10-10.0.19043-SP0",
+    "torch": "2.14.1+cpu",
+    "cuda": false,
+    "mps": false,
+    "demucs": "4.1.0",
+    "faster_whisper": "1.2.1",
+    "ctranslate2": "4.8.3",
+    "onnxruntime": "1.31.0"
+  },
+  "offlineSmokeResult": {
+    "event": "result",
+    "stems": {
+      "vocals": "Z:\\workspace\\work\\voice-smoke\\vocals.wav",
+      "no_vocals": "Z:\\workspace\\work\\voice-smoke\\no_vocals.wav"
+    },
+    "transcript_path": "Z:\\workspace\\work\\voice-smoke\\transcript.json",
+    "language": "en",
+    "language_probability": 0.368,
+    "words": [],
+    "timings": {
+      "import_torch": 12.65,
+      "separate": 32.6,
+      "transcribe": 18.7
+    },
+    "peak_rss_mb": 1441,
+    "device": "cpu"
+  },
+  "smokeInput": "one second of stereo silence at 44100 Hz; not a speech accuracy test",
+  "smokeHost": "Wine 10 on Linux with native UCRT and OpenMP affinity compatibility settings",
+  "payloadIntegrityPassed": true,
+  "installerIntegrityPassed": true,
+  "nativeWindowsInstallationAndGUI": "not tested",
+  "msvcRedistributable": {
+    "url": "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+    "sha256": "cc0ff0eb1dc3f5188ae6300faef32bf5beeba4bdd6e8e445a9184072096b713b"
+  }
+}

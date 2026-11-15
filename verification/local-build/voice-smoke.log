@@ -1,0 +1,10 @@
+{"event": "stage", "stage": "separate", "status": "start", "text": "Separating the vocals"}
+Selected model is a bag of 1 models. You will see that many progress bars per track.
+Separated tracks will be stored in C:\users\agent\AppData\Local\Temp\dub-off-demucs-e8enw2yl\htdemucs
+Separating track Z:\workspace\work\smoke-input.wav
+  0%|                                                                                   | 0.0/5.85 [00:00<?, ?seconds/s]100%|██████████████████████████████████████████████████████████████████████████| 5.85/5.85 [00:26<00:00,  4.46s/seconds]100%|██████████████████████████████████████████████████████████████████████████| 5.85/5.85 [00:26<00:00,  4.46s/seconds]
+{"event": "stage", "stage": "separate", "status": "done", "seconds": 32.6}
+{"event": "stage", "stage": "transcribe", "status": "start", "text": "Transcribing the dialogue"}
+{"event": "log", "text": "Detected language en (0.37)"}
+{"event": "stage", "stage": "transcribe", "status": "done", "seconds": 18.7}
+{"event": "result", "stems": {"vocals": "Z:\\workspace\\work\\voice-smoke\\vocals.wav", "no_vocals": "Z:\\workspace\\work\\voice-smoke\\no_vocals.wav"}, "transcript_path": "Z:\\workspace\\work\\voice-smoke\\transcript.json", "language": "en", "language_probability": 0.368, "words": [], "timings": {"import_torch": 12.65, "separate": 32.6, "transcribe": 18.7}, "peak_rss_mb": 1441, "device": "cpu"}

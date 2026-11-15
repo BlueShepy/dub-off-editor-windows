@@ -1,0 +1,13 @@
+{
+  "name": "dub-off-editor",
+  "productName": "Dub-Off Editor",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The Dub-Off scene editor as a desktop app: cut a clip, find its lines, build a scene. Copies what it needs from ../../app and never imports it.",
+  "author": "Dub-Off",
+  "type": "module",
+  "main": "out/main.mjs",
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}

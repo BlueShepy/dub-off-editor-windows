@@ -1,0 +1,41 @@
+# The voice tools' Python environment. At package time the bundled uv
+# installs exactly the locked set into the folder the installer ships
+# (scripts/build-voice-env.mjs, src/main/voiceEnv.ts); the app checks the
+# lock's hash against it. Regenerate the lock with
+#   ../vendor/uv/<os>-<arch>/uv lock
+[project]
+name = "dub-off-voice-tools"
+version = "0.0.1"
+requires-python = "==3.12.*"
+dependencies = [
+  # Production builds stems with demucs (app/scenes/build-pack.mjs); 4.1.0 is
+  # what its unpinned uvx call resolves to today.
+  "demucs==4.1.0",
+  "faster-whisper==1.2.1",
+  # PyAV 19 dropped av.open(metadata_errors=), which faster-whisper 1.2.1
+  # passes on every decode.
+  "av==18.1.0",
+  "torch",
+]
+
+[tool.uv]
+package = false
+# The platforms the app ships on, each one where every package has a wheel
+# (the env builds with --no-build: nothing compiles). Left
+# out: Intel Macs (torch's last macOS x86_64 wheel is 2.2) and Linux and
+# Windows on ARM (demucs 4.1's sphn and ctranslate2 publish no wheels there).
+environments = [
+  "sys_platform == 'darwin' and platform_machine == 'arm64'",
+  "sys_platform == 'linux' and platform_machine == 'x86_64'",
+  "sys_platform == 'win32' and platform_machine == 'AMD64'",
+]
+
+# CPU-only torch everywhere: without this, Linux resolves the CUDA build and
+# pulls several GB of nvidia-* wheels.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]

@@ -1,0 +1,23 @@
+
+7-Zip (z) 26.06 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-11-06
+ 64-bit locale=C.UTF-8 Threads:3 OPEN_MAX:16384, ASM
+
+Scanning the drive for archives:
+1 file, 917075698 bytes (875 MiB)
+
+Testing archive: /workspace/output/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe
+--
+Path = /workspace/output/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe
+Type = Nsis
+Physical Size = 917075698
+Method = Deflate
+Solid = -
+Headers Size = 122286
+Embedded Stub Size = 89600
+SubType = NSIS-3 Unicode
+
+Everything is Ok
+
+Files: 9
+Size:       916458045
+Compressed: 917075698

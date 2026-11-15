@@ -33,7 +33,7 @@ jobs:
         env:
           REPOSITORY: ${{ github.repository }}
         run: |
-          gh release upload v0.1.0-windows.1 "$DUB_PORT_WORK_ROOT/release/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe" "$DUB_PORT_WORK_ROOT/release/SHA256SUMS.txt" --clobber --repo "$REPOSITORY"
+          gh release upload v0.1.0-windows.1 "$DUB_PORT_WORK_ROOT/release/Dub-Off-Editor-0.1.0-Windows-x64-Setup.exe" "$DUB_PORT_WORK_ROOT/release/Dub-Off-Editor-0.1.0-Windows-x64-Portable.zip" "$DUB_PORT_WORK_ROOT/release/SHA256SUMS.txt" --clobber --repo "$REPOSITORY"
           gh release edit v0.1.0-windows.1 --draft=false --prerelease --notes-file "$DUB_PORT_WORK_ROOT/release/notes.md" --repo "$REPOSITORY"
       - name: Record the published checksum
         run: |

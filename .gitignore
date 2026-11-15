@@ -1,0 +1,8 @@
+node_modules/
+work/
+builder-cache/
+__pycache__/
+*.pyc
+scripts/set-branding.mjs
+*.exe
+*.zip

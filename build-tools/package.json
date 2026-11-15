@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "electron-builder": "^26.18.0",
+    "resedit": "^3.1.1"
+  }
+}
